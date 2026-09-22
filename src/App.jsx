@@ -1,5 +1,5 @@
 import { Link, Route, Routes, useLocation } from 'react-router-dom'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 
 const experience = [
   {
@@ -49,7 +49,7 @@ const experience = [
       'Exposed OData endpoints and optimized GraphQL data retrieval workflows.',
       'Implemented legacy Java override configurations to support cloud deployments.',
     ],
-    tech: ['C#', '.NET 8', 'Java', 'OData', 'GraphQL', 'Azure'],
+    tech: ['C#', '.NET 6', 'Java', 'OData', 'GraphQL', 'Azure'],
   },
   {
     company: 'Infosys (Client: Walmart)',
@@ -68,13 +68,16 @@ const projects = [
     slug: 'yavria',
     title: 'Yavria',
     subtitle: 'AI Context & Knowledge Platform',
-    mark: 'Y',
-    summary: 'A self-hosted, multi-service AI platform for persistent conversation context, semantic retrieval, file-based context, and external integrations. Built with PostgreSQL/pgvector, provider-agnostic embeddings, containerized deployment, and explicit service boundaries.',
-    tech: ['C#', '.NET', 'PostgreSQL', 'pgvector', 'React', 'Docker'],
-    image: '/assets/yavria.png',
+    icon: '/assets/yavria-icon.png',
+    summary: 'A self-hosted, multi-service AI platform for persistent conversation context, semantic retrieval, file-based context, and external integrations. Its VS Code extension brings Yavria into the editor with workspace synchronization, file attachment, and repository-aware chat.',
+    tech: ['C#', '.NET', 'PostgreSQL', 'pgvector', 'React', 'VS Code', 'Docker'],
+    images: [
+      '/assets/yavria/yavria-1.png',
+      '/assets/yavria/yavria-2.png',
+    ],
     liveUrl: 'https://yavria.com',
     caseStudy: {
-      intro: 'Yavria is a multi-service AI platform built around persistent conversation context, semantic knowledge retrieval, file-based context, and external application integrations.',
+      intro: 'Yavria is a multi-service AI platform built around persistent conversation context, semantic knowledge retrieval, file-based context, and external application integrations. A companion VS Code extension can synchronize a workspace, attach files directly from the editor, and use that repository context in chat.',
       sections: [
         {
           title: 'Retrieval architecture',
@@ -91,13 +94,17 @@ const projects = [
     slug: 'nextproblem',
     title: 'NextProblem',
     subtitle: 'Adaptive Coding Interview Practice',
-    mark: '</>',
-    summary: 'A full-stack coding practice platform that tracks problem history and generates personalized daily practice queues using mastery, completion state, focus-first pattern practice, and spaced repetition. AI coaching is integrated through Yavria.',
-    tech: ['C#', 'ASP.NET Core', 'React', 'TypeScript', 'AI'],
-    image: '/assets/nextproblem.png',
+    icon: '/assets/nextproblem-icon.svg',
+    summary: 'A full-stack coding practice platform that turns LeetCode history into personalized daily practice queues using mastery, completion state, focus-first pattern practice, and spaced repetition. Its Chrome extension passively synchronizes submissions and adds in-page text, screenshot, and voice coaching powered through Yavria.',
+    tech: ['C#', 'ASP.NET Core', 'React', 'TypeScript', 'Chrome Extension', 'AI'],
+    images: [
+      '/assets/next-problem/next-problem-1.png',
+      '/assets/next-problem/next-problem-2.png',
+      '/assets/next-problem/next-problem-3.png',
+    ],
     liveUrl: 'https://nextproblem.app',
     caseStudy: {
-      intro: 'NextProblem is a full-stack coding-practice platform designed to turn problem history into a focused daily practice plan rather than a static problem list.',
+      intro: 'NextProblem is a full-stack coding-practice platform designed to turn LeetCode history into a focused daily practice plan rather than a static problem list. Its Chrome extension synchronizes solved problems and submission details in the background while also exposing contextual text, screenshot, and voice coaching on LeetCode.',
       sections: [
         {
           title: 'Practice planning',
@@ -166,7 +173,7 @@ function ProjectCard({ project }) {
   return (
     <article className="project-card">
       <div className="project-card-head">
-        <div className={`project-mark ${project.slug}`}>{project.mark}</div>
+        <div className={`project-mark ${project.slug}`}><img src={project.icon} alt="" aria-hidden="true" /></div>
         <div className="project-title-wrap">
           <h3>{project.title}</h3>
           <p>{project.subtitle}</p>
@@ -185,7 +192,6 @@ function HomePage() {
   return (
     <>
       <section className="hero" id="home">
-        <p className="eyebrow">Software Engineer</p>
         <h1>Tools, Platforms, Products</h1>
         <p className="hero-copy">
           I build across the software stack, from developer tools and shared infrastructure to full applications.
@@ -230,9 +236,8 @@ function HomePage() {
         <div className="about-body">
           <div className="about-copy">
             <p>
-              I'm a software engineer with experience in distributed systems, cloud infrastructure, and developer tools.
-              I care about clean architecture, maintainable code, and practical solutions. Outside of work, I enjoy working
-              on personal projects, learning new technologies, and solving interesting problems.
+              I'm a software engineer who enjoys challenges and system design.
+              Outside of work, I enjoy working on personal projects and spending time with my family.
             </p>
             <a className="text-link" href="mailto:marcomtzan@gmail.com">Get in touch <ArrowIcon /></a>
           </div>
@@ -249,6 +254,21 @@ function HomePage() {
 }
 
 function CaseStudyPage({ project }) {
+  const [imageIndex, setImageIndex] = useState(0)
+  const imageCount = project.images.length
+
+  const showPreviousImage = () => {
+    setImageIndex((current) => (current - 1 + imageCount) % imageCount)
+  }
+
+  const showNextImage = () => {
+    setImageIndex((current) => (current + 1) % imageCount)
+  }
+
+  useEffect(() => {
+    setImageIndex(0)
+  }, [project.slug])
+
   return (
     <main className="case-study-page">
       <div className="case-back-row">
@@ -257,7 +277,7 @@ function CaseStudyPage({ project }) {
       <section className="case-hero">
         <p className="eyebrow">Case Study</p>
         <div className="case-title-row">
-          <div className={`project-mark large ${project.slug}`}>{project.mark}</div>
+          <div className={`project-mark large ${project.slug}`}><img src={project.icon} alt="" aria-hidden="true" /></div>
           <div>
             <h1>{project.title}</h1>
             <p>{project.subtitle}</p>
@@ -267,8 +287,30 @@ function CaseStudyPage({ project }) {
         <TechPills items={project.tech} />
       </section>
 
-      <section className="case-screenshot-block">
-        <img src={project.image} alt={`${project.title} application screenshot`} />
+      <section className="case-screenshot-block" aria-label={`${project.title} screenshots`}>
+        <button
+          className="case-screenshot-arrow previous"
+          type="button"
+          onClick={showPreviousImage}
+          aria-label={`View previous ${project.title} screenshot`}
+        >
+          <span aria-hidden="true">←</span>
+        </button>
+        <img
+          src={project.images[imageIndex]}
+          alt={`${project.title} application screenshot ${imageIndex + 1} of ${imageCount}`}
+        />
+        <button
+          className="case-screenshot-arrow next"
+          type="button"
+          onClick={showNextImage}
+          aria-label={`View next ${project.title} screenshot`}
+        >
+          <span aria-hidden="true">→</span>
+        </button>
+        <span className="case-screenshot-count" aria-live="polite">
+          {imageIndex + 1} / {imageCount}
+        </span>
       </section>
 
       <section className="case-detail-list">
@@ -323,7 +365,6 @@ function Layout() {
       </Routes>
       <footer className="footer">
         <span>© 2026 Marco Martinez</span>
-        <span>Always learning. Always building.</span>
       </footer>
     </div>
   )

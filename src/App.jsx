@@ -236,8 +236,10 @@ function HomePage() {
         <div className="about-body">
           <div className="about-copy">
             <p>
-              I'm a software engineer who enjoys challenges and system design.
-              Outside of work, I enjoy working on personal projects and spending time with my family.
+              I'm a software engineer who likes solving complex problems, designing systems, and building software that is reliable and maintainable. I’m especially interested in backend development, distributed systems, and understanding how software works beneath the surface.
+            </p>
+            <p>
+              Outside of work, I spend time building personal projects, exploring new technologies, and being with my family.
             </p>
             <a className="text-link" href="mailto:marcomtzan@gmail.com">Get in touch <ArrowIcon /></a>
           </div>

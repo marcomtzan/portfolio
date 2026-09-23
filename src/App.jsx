@@ -19,7 +19,7 @@ const experience = [
     bullets: [
       'Delivered a full-stack third-party application integration using C#, .NET, TypeScript, and Razor Pages, including customer-specific deployment scripting, protected backups, and recovery safeguards, contributing to a successful $10M customer sale.',
       'Designed and rolled out a shared TypeScript/Razor Pages UI library across 5+ web applications, standardizing dialog behavior and driving cross-team adoption of a common implementation.',
-      'Redesigned a C#/.NET enterprise chat application around participant-based conversation identity to prevent duplicate chats and automatically resume existing conversations.',
+      'Redesigned a SignalR-based enterprise chat application to use participant-based conversation identity, eliminating duplicate conversations and improving server-side query efficiency.',
       'Optimized PL/SQL chat queries by moving filtering and sorting into the database and limiting result sets, reducing response times from ~6 seconds to near-instant.',
       'Diagnosed and fixed a long-standing JavaScript memory leak caused by Chrome extension interactions that bypassed normal QA coverage, resolving a customer-impacting production issue.',
     ],

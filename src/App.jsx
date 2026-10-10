@@ -223,7 +223,7 @@ function HomePage() {
         <div className="about-body">
           <div className="about-copy">
             <p>
-              I'm a senior software engineer who enjoys solving complex technical problems, exploring different approaches, and building reliable software. My work includes full-stack development, cloud infrastructure, modernizing older systems, and troubleshooting production applications.
+              I build full-stack applications, backend services, and infrastructure, with a focus on solving complex engineering problems. My experience spans healthcare software, distributed systems, and AI-powered development tools.
             </p>
             <p>
               Outside of work, I enjoy building personal projects, experimenting with AI and new technologies, and spending time with my family.

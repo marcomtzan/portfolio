@@ -7,11 +7,11 @@ const experience = [
     role: 'Senior Software Engineer',
     dates: 'Mar 2025 – Present',
     bullets: [
-      'Developed a centralized monitoring platform on Kubernetes using OpenTelemetry, Loki, Tempo, and Prometheus to make application logs, metrics, and traces easier to access and troubleshoot.',
+      'Developed a centralized observability stack on Kubernetes using OpenTelemetry, Loki, Tempo, and Prometheus to make application logs, metrics, and traces easier to access and troubleshoot.',
       'Delivered a full-stack third-party application integration using C#, .NET, and TypeScript, including deployment scripts and backups, to support a major customer sales opportunity.',
-      'Built and integrated a shared dialog UI library using TypeScript, JavaScript, HTML, and CSS across 5+ web applications and a C++ desktop client, standardizing dialog behavior across teams.',
+      'Built and integrated a shared dialog UI library using TypeScript, JavaScript, HTML, and CSS across multiple web applications and a C++ desktop client, standardizing dialog behavior across teams.',
       'Redesigned a SignalR-based enterprise chat application to prevent duplicate conversations and improve the user experience.',
-      'Optimized SQL queries by improving filtering, sorting, and data retrieval, reducing response times from 6 seconds to near-instant under high load.',
+      'Optimized chat participant selection through SQL query improvements and client-side caching, reducing dropdown load times from ~6 seconds to near-instant for large datasets.',
       'Diagnosed and fixed a long-standing JavaScript memory leak caused by Chrome extension interactions, resolving a customer-impacting production issue.',
     ],
     tech: ['C#', '.NET', 'TypeScript', 'JavaScript', 'C++', 'SQL', 'Kubernetes', 'OpenTelemetry', 'Loki', 'Tempo', 'Prometheus', 'SignalR'],
@@ -22,11 +22,11 @@ const experience = [
     dates: 'May 2023 – Mar 2025',
     bullets: [
       'Migrated backend functionality from legacy Java services to C#/.NET, modernizing application components while preserving existing behavior.',
-      'Designed and built a C#/.NET OData authentication flow, allowing JWT-authenticated users to create and use API keys for Power BI access to on-premises reporting data.',
-      'Troubleshot production issues in Azure using Application Insights to analyze logs, investigate failures, and identify root causes.',
+      'Designed and built a .NET authentication flow, allowing JWT-authenticated users to create and use API keys for Power BI access to on-premises reporting data.',
       'Led offshore engineers implementing OData endpoints, assigning work around repeatable application patterns and establishing implementation conventions.',
+      'Diagnosed and resolved production issues in Azure using Application Insights to identify root causes, implementing and deploying fixes through CI/CD pipelines.',
     ],
-    tech: ['C#', '.NET', 'Java', 'Azure', 'Application Insights', 'OData', 'Power BI', 'JWT'],
+    tech: ['C#', '.NET', 'Java', 'Azure', 'Application Insights', 'CI/CD', 'OData', 'Power BI', 'JWT'],
   },
   {
     company: 'LexisNexis',
@@ -34,10 +34,10 @@ const experience = [
     dates: 'Feb 2022 – May 2023',
     bullets: [
       'Modified Java application configurations and integration behavior to support cloud deployments.',
-      'Implemented custom C#/.NET CORS and host-filtering middleware to secure applications in load-balanced cloud environments.',
+      'Developed and extended cloud-hosted GraphQL and on-premises OData endpoints using C#, .NET, Entity Framework, and SQL Server.',
       'Built a GraphQL telemetry framework using schema-level annotations to log request properties in the cloud, with configurable PII obfuscation to improve post-deployment troubleshooting.',
     ],
-    tech: ['C#', '.NET', 'Java', 'Azure', 'GraphQL', 'CORS'],
+    tech: ['C#', '.NET', 'Java', 'GraphQL', 'OData', 'Entity Framework', 'SQL Server', 'Azure'],
   },
   {
     company: 'Infosys (Client: Walmart)',
@@ -58,7 +58,7 @@ const projects = [
     subtitle: 'AI Context & Knowledge Platform',
     icon: '/assets/yavria-icon.png',
     summary: 'A self-hosted AI platform built with .NET, React, and PostgreSQL. It supports semantic search, RAG, persistent conversation context, and repository-aware assistance through a VS Code extension.',
-    tech: ['C#', '.NET', 'PostgreSQL', 'pgvector', 'React', 'VS Code', 'Docker'],
+    tech: ['C#', '.NET 10', 'PostgreSQL', 'pgvector', 'RAG', 'React', 'OpenAI API', 'Docker'],
     images: [
       '/assets/yavria/yavria-1.png',
       '/assets/yavria/yavria-2.png',
@@ -84,7 +84,7 @@ const projects = [
     subtitle: 'Adaptive Coding Interview Practice',
     icon: '/assets/nextproblem-icon.svg',
     summary: 'A full-stack coding practice platform that tracks LeetCode progress and creates personalized daily practice plans. A Chrome extension syncs submissions, while Yavria provides AI coaching.',
-    tech: ['C#', 'ASP.NET Core', 'React', 'TypeScript', 'Chrome Extension', 'AI'],
+    tech: ['C#', '.NET 10', 'ASP.NET Core', 'React', 'TypeScript', 'OpenAI API'],
     images: [
       '/assets/next-problem/next-problem-1.png',
       '/assets/next-problem/next-problem-2.png',
@@ -223,7 +223,7 @@ function HomePage() {
         <div className="about-body">
           <div className="about-copy">
             <p>
-              I build full-stack applications, backend services, and infrastructure, with a focus on solving complex engineering problems. My experience spans healthcare software, distributed systems, and AI-powered development tools.
+              I enjoy solving complex technical problems, evaluating different approaches, and building reliable software. My work spans full-stack development, cloud infrastructure, backend modernization, and production troubleshooting.
             </p>
             <p>
               Outside of work, I enjoy building personal projects, experimenting with AI and new technologies, and spending time with my family.
@@ -231,7 +231,7 @@ function HomePage() {
             <a className="text-link" href="mailto:marcomtzan@gmail.com">Get in touch <ArrowIcon /></a>
           </div>
           <address className="contact-list">
-            <span><strong>⌖</strong> Holly Springs, NC</span>
+            <span><strong>⌖</strong> Raleigh, NC</span>
             <a href="mailto:marcomtzan@gmail.com"><strong>✉</strong> marcomtzan@gmail.com</a>
             <a href="https://linkedin.com/in/marcomtzan" target="_blank" rel="noreferrer"><strong>in</strong> linkedin.com/in/marcomtzan</a>
             <a href="https://github.com/marcomtzan" target="_blank" rel="noreferrer"><strong>◉</strong> github.com/marcomtzan</a>

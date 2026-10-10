@@ -4,50 +4,40 @@ import { useEffect, useState } from 'react'
 const experience = [
   {
     company: 'FUJIFILM Healthcare Americas Corporation',
-    role: 'Senior Software Engineer — Research & Development',
-    dates: 'Aug 2026 – Present',
+    role: 'Senior Software Engineer',
+    dates: 'Mar 2025 – Present',
     bullets: [
-      'Built a centralized observability platform replacing fragmented file logging with container-native logging, metrics, and distributed tracing across .NET services.',
-      'Developed reusable telemetry instrumentation and deployed telemetry collection infrastructure to Kubernetes using OpenTelemetry, Loki, Tempo, Prometheus, and S3-compatible storage.',
+      'Developed a centralized monitoring platform on Kubernetes using OpenTelemetry, Loki, Tempo, and Prometheus to make application logs, metrics, and traces easier to access and troubleshoot.',
+      'Delivered a full-stack third-party application integration using C#, .NET, and TypeScript, including deployment scripts and backups, to support a major customer sales opportunity.',
+      'Built and integrated a shared dialog UI library using TypeScript, JavaScript, HTML, and CSS across 5+ web applications and a C++ desktop client, standardizing dialog behavior across teams.',
+      'Redesigned a SignalR-based enterprise chat application to prevent duplicate conversations and improve the user experience.',
+      'Optimized SQL queries by improving filtering, sorting, and data retrieval, reducing response times from 6 seconds to near-instant under high load.',
+      'Diagnosed and fixed a long-standing JavaScript memory leak caused by Chrome extension interactions, resolving a customer-impacting production issue.',
     ],
-    tech: ['C#', '.NET 10', 'ASP.NET Core', 'Kubernetes', 'OpenTelemetry', 'Loki', 'Tempo', 'Prometheus'],
-  },
-  {
-    company: 'FUJIFILM Healthcare Americas Corporation',
-    role: 'Senior Software Engineer — Product Development',
-    dates: 'Mar 2025 – Aug 2026',
-    bullets: [
-      'Delivered a full-stack third-party application integration using C#, .NET, TypeScript, and Razor Pages, including customer-specific deployment scripting, protected backups, and recovery safeguards, contributing to a successful $10M customer sale.',
-      'Designed and rolled out a shared TypeScript/Razor Pages UI library across 5+ web applications, standardizing dialog behavior and driving cross-team adoption of a common implementation.',
-      'Redesigned a SignalR-based enterprise chat application to use participant-based conversation identity, eliminating duplicate conversations and improving server-side query efficiency.',
-      'Optimized PL/SQL chat queries by moving filtering and sorting into the database and limiting result sets, reducing response times from ~6 seconds to near-instant.',
-      'Diagnosed and fixed a long-standing JavaScript memory leak caused by Chrome extension interactions that bypassed normal QA coverage, resolving a customer-impacting production issue.',
-    ],
-    tech: ['C#', '.NET 10', '.NET Framework 4.8', 'TypeScript', 'Razor Pages', 'PL/SQL'],
+    tech: ['C#', '.NET', 'TypeScript', 'JavaScript', 'C++', 'SQL', 'Kubernetes', 'OpenTelemetry', 'Loki', 'Tempo', 'Prometheus', 'SignalR'],
   },
   {
     company: 'LexisNexis',
     role: 'Software Engineer II',
     dates: 'May 2023 – Mar 2025',
     bullets: [
-      'Designed the T-SQL authentication data model and implemented schema migrations with FluentMigrator, securely storing API credentials using unique salts and cryptographic hashes.',
-      'Designed and built a C#/.NET OData authentication flow, allowing JWT-authenticated users to provision API keys for Power BI access to on-premises reporting data.',
-      'Served as the primary technical point of contact for authentication integrations, guiding application and automation teams through API-key and token-based authentication flows.',
-      'Led offshore engineers implementing OData/.NET endpoints, assigning work around repeatable application patterns and establishing implementation conventions.',
-      'Built a GraphQL telemetry framework using schema-level annotations to log request properties in the cloud, with configurable PII obfuscation to improve post-deployment troubleshooting.',
+      'Migrated backend functionality from legacy Java services to C#/.NET, modernizing application components while preserving existing behavior.',
+      'Designed and built a C#/.NET OData authentication flow, allowing JWT-authenticated users to create and use API keys for Power BI access to on-premises reporting data.',
+      'Troubleshot production issues in Azure using Application Insights to analyze logs, investigate failures, and identify root causes.',
+      'Led offshore engineers implementing OData endpoints, assigning work around repeatable application patterns and establishing implementation conventions.',
     ],
-    tech: ['C#', '.NET 8', 'OData', 'GraphQL', 'T-SQL', 'FluentMigrator', 'Power BI'],
+    tech: ['C#', '.NET', 'Java', 'Azure', 'Application Insights', 'OData', 'Power BI', 'JWT'],
   },
   {
     company: 'LexisNexis',
     role: 'Software Engineer I',
     dates: 'Feb 2022 – May 2023',
     bullets: [
-      'Migrated multiple C#/.NET applications from implicit-flow authentication to PKCE.',
+      'Modified Java application configurations and integration behavior to support cloud deployments.',
       'Implemented custom C#/.NET CORS and host-filtering middleware to secure applications in load-balanced cloud environments.',
-      'Built and supported Angular/TypeScript application workflows backed by OData endpoints and optimized GraphQL data retrieval using data loaders.',
+      'Built a GraphQL telemetry framework using schema-level annotations to log request properties in the cloud, with configurable PII obfuscation to improve post-deployment troubleshooting.',
     ],
-    tech: ['C#', '.NET 6', 'Angular', 'TypeScript', 'OData', 'GraphQL'],
+    tech: ['C#', '.NET', 'Java', 'Azure', 'GraphQL', 'CORS'],
   },
   {
     company: 'Infosys (Client: Walmart)',
@@ -67,7 +57,7 @@ const projects = [
     title: 'Yavria',
     subtitle: 'AI Context & Knowledge Platform',
     icon: '/assets/yavria-icon.png',
-    summary: 'A self-hosted, multi-service AI platform for persistent conversation context, semantic retrieval, file-based context, and external integrations. Its VS Code extension brings Yavria into the editor with workspace synchronization, file attachment, and repository-aware chat.',
+    summary: 'A self-hosted AI platform built with .NET, React, and PostgreSQL. It supports semantic search, RAG, persistent conversation context, and repository-aware assistance through a VS Code extension.',
     tech: ['C#', '.NET', 'PostgreSQL', 'pgvector', 'React', 'VS Code', 'Docker'],
     images: [
       '/assets/yavria/yavria-1.png',
@@ -75,7 +65,7 @@ const projects = [
     ],
     liveUrl: 'https://yavria.com',
     caseStudy: {
-      intro: 'Yavria is a multi-service AI platform built around persistent conversation context, semantic knowledge retrieval, file-based context, and external application integrations. A companion VS Code extension can synchronize a workspace, attach files directly from the editor, and use that repository context in chat.',
+      intro: 'Yavria is a self-hosted, multi-service AI platform for semantic search, RAG, and persistent conversation context. Its VS Code extension brings repository-aware assistance into the editor.',
       sections: [
         {
           title: 'Retrieval architecture',
@@ -93,7 +83,7 @@ const projects = [
     title: 'NextProblem',
     subtitle: 'Adaptive Coding Interview Practice',
     icon: '/assets/nextproblem-icon.svg',
-    summary: 'A full-stack coding practice platform that turns LeetCode history into personalized daily practice queues using mastery, completion state, focus-first pattern practice, and spaced repetition. Its Chrome extension passively synchronizes submissions and adds in-page text, screenshot, and voice coaching powered through Yavria.',
+    summary: 'A full-stack coding practice platform that tracks LeetCode progress and creates personalized daily practice plans. A Chrome extension syncs submissions, while Yavria provides AI coaching.',
     tech: ['C#', 'ASP.NET Core', 'React', 'TypeScript', 'Chrome Extension', 'AI'],
     images: [
       '/assets/next-problem/next-problem-1.png',
@@ -102,7 +92,7 @@ const projects = [
     ],
     liveUrl: 'https://nextproblem.app',
     caseStudy: {
-      intro: 'NextProblem is a full-stack coding-practice platform designed to turn LeetCode history into a focused daily practice plan rather than a static problem list. Its Chrome extension synchronizes solved problems and submission details in the background while also exposing contextual text, screenshot, and voice coaching on LeetCode.',
+      intro: 'NextProblem is a full-stack coding-practice platform that turns LeetCode history into personalized daily practice plans. Its Chrome extension syncs submissions and provides access to contextual AI coaching.',
       sections: [
         {
           title: 'Practice planning',
@@ -192,9 +182,8 @@ function HomePage() {
       <section className="hero" id="home">
         <h1>Tools, Platforms, Products</h1>
         <p className="hero-copy">
-          I build across the software stack, from developer tools and shared infrastructure to full applications.
-          My experience includes C#/.NET, TypeScript, distributed systems, observability, cloud infrastructure,
-          and modern web development.
+          I'm a senior software engineer building and maintaining enterprise applications with C#/.NET, Java, and TypeScript.
+          My experience spans full-stack development, cloud infrastructure, backend modernization, and production troubleshooting.
         </p>
       </section>
 
@@ -234,10 +223,10 @@ function HomePage() {
         <div className="about-body">
           <div className="about-copy">
             <p>
-              I'm a software engineer who likes solving complex problems, designing systems, and building software that is reliable and maintainable. I’m especially interested in backend development, distributed systems, and understanding how software works beneath the surface.
+              I'm a senior software engineer who enjoys solving complex technical problems, exploring different approaches, and building reliable software. My work includes full-stack development, cloud infrastructure, modernizing older systems, and troubleshooting production applications.
             </p>
             <p>
-              Outside of work, I spend time building personal projects, exploring new technologies, and being with my family.
+              Outside of work, I enjoy building personal projects, experimenting with AI and new technologies, and spending time with my family.
             </p>
             <a className="text-link" href="mailto:marcomtzan@gmail.com">Get in touch <ArrowIcon /></a>
           </div>

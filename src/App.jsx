@@ -8,7 +8,7 @@ const experience = [
     dates: 'Mar 2025 – Present',
     bullets: [
       'Built centralized observability infrastructure on Kubernetes using OpenTelemetry, Loki, Tempo, and Prometheus, with a reusable .NET logging library to standardize telemetry across applications.',
-      'Contributing to an R&D initiative modernizing legacy .NET Framework and IIS-hosted applications through containerization, Kubernetes, and AWS cloud infrastructure.',
+      'Contributing to the modernization of legacy .NET Framework and IIS-hosted applications for containerized deployment using Kubernetes and AWS infrastructure.',
       'Delivered a full-stack third-party application integration using C#, .NET, and TypeScript, including deployment scripts and backups, to support a major customer sales opportunity.',
       'Built and integrated a shared dialog UI library using TypeScript, JavaScript, HTML, and CSS across multiple web applications and a C++ desktop client, standardizing dialog behavior across teams.',
       'Optimized participant selection in a SignalR-based chat application using SQL query improvements and client-side caching, reducing load times from ~6 seconds to near-instant for large datasets.',

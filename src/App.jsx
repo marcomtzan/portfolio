@@ -7,14 +7,14 @@ const experience = [
     role: 'Senior Software Engineer',
     dates: 'Mar 2025 – Present',
     bullets: [
-      'Developed a centralized observability stack on Kubernetes using OpenTelemetry, Loki, Tempo, and Prometheus to make application logs, metrics, and traces easier to access and troubleshoot.',
+      'Built centralized observability infrastructure on Kubernetes using OpenTelemetry, Loki, Tempo, and Prometheus, with a reusable .NET logging library to standardize telemetry across applications.',
+      'Contributing to an R&D initiative modernizing legacy .NET Framework and IIS-hosted applications through containerization, Kubernetes, and AWS cloud infrastructure.',
       'Delivered a full-stack third-party application integration using C#, .NET, and TypeScript, including deployment scripts and backups, to support a major customer sales opportunity.',
       'Built and integrated a shared dialog UI library using TypeScript, JavaScript, HTML, and CSS across multiple web applications and a C++ desktop client, standardizing dialog behavior across teams.',
-      'Redesigned a SignalR-based enterprise chat application to prevent duplicate conversations and improve the user experience.',
-      'Optimized chat participant selection through SQL query improvements and client-side caching, reducing dropdown load times from ~6 seconds to near-instant for large datasets.',
+      'Optimized participant selection in a SignalR-based chat application using SQL query improvements and client-side caching, reducing load times from ~6 seconds to near-instant for large datasets.',
       'Diagnosed and fixed a long-standing JavaScript memory leak caused by Chrome extension interactions, resolving a customer-impacting production issue.',
     ],
-    tech: ['C#', '.NET', 'TypeScript', 'JavaScript', 'C++', 'SQL', 'Kubernetes', 'OpenTelemetry', 'Loki', 'Tempo', 'Prometheus', 'SignalR'],
+    tech: ['C#', '.NET', 'TypeScript', 'JavaScript', 'C++', 'SQL', 'Kubernetes', 'OpenTelemetry', 'Loki', 'Tempo', 'Prometheus', 'SignalR', 'AWS', 'IIS', '.NET Framework'],
   },
   {
     company: 'LexisNexis',

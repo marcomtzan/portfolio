@@ -8,13 +8,13 @@ const experience = [
     dates: 'Mar 2025 – Present',
     bullets: [
       'Built centralized observability infrastructure on Kubernetes using OpenTelemetry, Loki, Tempo, and Prometheus, with a reusable .NET logging library to standardize telemetry across applications.',
-      'Contributing to the modernization of legacy .NET Framework and IIS-hosted applications for containerized deployment using Kubernetes and AWS infrastructure.',
       'Delivered a full-stack third-party application integration using C#, .NET, and TypeScript, including deployment scripts and backups, to support a major customer sales opportunity.',
       'Built and integrated a shared dialog UI library using TypeScript, JavaScript, HTML, and CSS across multiple web applications and a C++ desktop client, standardizing dialog behavior across teams.',
-      'Optimized participant selection in a SignalR-based chat application using SQL query improvements and client-side caching, reducing load times from ~6 seconds to near-instant for large datasets.',
+      'Redesigned chat creation in a SignalR-based application to identify conversations by title and participants, preventing duplicate chats and enabling reuse of existing conversations.',
+      'Optimized chat participant selection using SQL query improvements and client-side caching, reducing dropdown load times from ~6 seconds to near-instant for large datasets.',
       'Diagnosed and fixed a long-standing JavaScript memory leak caused by Chrome extension interactions, resolving a customer-impacting production issue.',
     ],
-    tech: ['C#', '.NET', 'TypeScript', 'JavaScript', 'C++', 'SQL', 'Kubernetes', 'OpenTelemetry', 'Loki', 'Tempo', 'Prometheus', 'SignalR', 'AWS', 'IIS', '.NET Framework'],
+    tech: ['C#', '.NET', 'TypeScript', 'JavaScript', 'C++', 'SQL', 'Kubernetes', 'OpenTelemetry', 'Loki', 'Tempo', 'Prometheus', 'SignalR'],
   },
   {
     company: 'LexisNexis',
@@ -33,7 +33,7 @@ const experience = [
     role: 'Software Engineer I',
     dates: 'Feb 2022 – May 2023',
     bullets: [
-      'Modified Java application configurations and integration behavior to support cloud deployments.',
+      'Built a reusable Angular component guard using JWT module claims to control access to subscription-based features, with authorization enforced by backend services.',
       'Developed and extended cloud-hosted GraphQL and on-premises OData endpoints using C#, .NET, Entity Framework, and SQL Server.',
       'Built a GraphQL telemetry framework using schema-level annotations to log request properties in the cloud, with configurable PII obfuscation to improve post-deployment troubleshooting.',
     ],

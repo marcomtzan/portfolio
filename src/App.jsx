@@ -55,25 +55,33 @@ const projects = [
   {
     slug: 'yavria',
     title: 'Yavria',
-    subtitle: 'AI Context & Knowledge Platform',
+    subtitle: 'Repository-Aware AI & Developer Tools',
     icon: '/assets/yavria-icon.png',
-    summary: 'A self-hosted AI platform built with .NET, React, and PostgreSQL. It supports semantic search, RAG, persistent conversation context, and repository-aware assistance through a VS Code extension.',
-    tech: ['C#', '.NET 10', 'PostgreSQL', 'pgvector', 'RAG', 'React', 'OpenAI API', 'Docker'],
+    summary: 'A self-hosted AI workspace for exploring code and technical knowledge. Its retrieval pipeline combines hybrid ranking, persistent conversation context, and execution diagnostics, with a VS Code extension for repository-aware assistance.',
+    tech: ['C#', '.NET 10', 'PostgreSQL', 'pgvector', 'RAG', 'React', 'Docker', 'Kubernetes'],
     images: [
       '/assets/yavria/yavria-1.png',
       '/assets/yavria/yavria-2.png',
     ],
     liveUrl: 'https://yavria.com',
     caseStudy: {
-      intro: 'Yavria is a self-hosted, multi-service AI platform for semantic search, RAG, and persistent conversation context. Its VS Code extension brings repository-aware assistance into the editor.',
+      intro: 'I built Yavria to explore what makes AI assistance useful when answers depend on private repositories and accumulated context, not just a single prompt. It brings together knowledge ingestion, retrieval, model orchestration, and inspectable diagnostics behind a web app and VS Code extension.',
       sections: [
         {
-          title: 'Retrieval architecture',
-          body: 'The platform uses PostgreSQL with pgvector for semantic retrieval, provider-agnostic embeddings, and streaming LLM responses. Conversation orchestration and knowledge storage are intentionally separated into explicit service boundaries.',
+          title: 'Retrieval beyond vector similarity',
+          body: 'Content is indexed into PostgreSQL with pgvector and retrieved through a pipeline that considers semantic relevance, source authority, and query intent. Coverage planning and context compression help assemble the evidence sent to the model.',
         },
         {
-          title: 'Deployment and platform concerns',
-          body: 'The application is containerized and deployed with ingress routing through Cloudflare Tunnel, centralized authentication and API access, database migrations, and diagnostics.',
+          title: 'Orchestration and diagnostics',
+          body: 'Knowledge retrieval, conversation context, model calls, and authentication have distinct service responsibilities. Persisted execution traces expose individual pipeline stages, making response quality and failures easier to investigate.',
+        },
+        {
+          title: 'Developer workflow',
+          body: 'A VS Code extension brings repository-aware assistance directly into the editor. The web client supports authenticated conversations, persistent context, and streaming model responses.',
+        },
+        {
+          title: 'Self-hosting and deployment',
+          body: 'Docker and Kubernetes configurations support a multi-service stack with PostgreSQL, S3-compatible object storage, and edge routing. Self-hosting gives the application control over its data, infrastructure, and integration boundaries.',
         },
       ],
     },
@@ -81,10 +89,10 @@ const projects = [
   {
     slug: 'nextproblem',
     title: 'NextProblem',
-    subtitle: 'Adaptive Coding Interview Practice',
+    subtitle: 'Adaptive Coding Practice & AI Coach',
     icon: '/assets/nextproblem-icon.svg',
-    summary: 'A full-stack coding practice platform that tracks LeetCode progress and creates personalized daily practice plans. A Chrome extension syncs submissions, while Yavria provides AI coaching.',
-    tech: ['C#', '.NET 10', 'ASP.NET Core', 'React', 'TypeScript', 'OpenAI API'],
+    summary: 'A coding interview practice platform that turns LeetCode history into focused daily plans. It tracks pattern mastery and retention, syncs progress through a Chrome extension, and integrates Yavria for context-aware coaching.',
+    tech: ['C#', '.NET 10', 'ASP.NET Core', 'React', 'TypeScript', 'Docker', 'Kubernetes'],
     images: [
       '/assets/next-problem/next-problem-1.png',
       '/assets/next-problem/next-problem-2.png',
@@ -92,15 +100,23 @@ const projects = [
     ],
     liveUrl: 'https://nextproblem.app',
     caseStudy: {
-      intro: 'NextProblem is a full-stack coding-practice platform that turns LeetCode history into personalized daily practice plans. Its Chrome extension syncs submissions and provides access to contextual AI coaching.',
+      intro: 'I built NextProblem around a question: how do you decide what to practice next when completing more problems does not necessarily mean making progress? It combines practice history, self-assessment, and targeted review into daily plans, with AI coaching available when needed.',
       sections: [
         {
-          title: 'Practice planning',
-          body: 'The application generates personalized daily practice queues from mastery, completion state, and spaced repetition. Its focus-first planning system concentrates practice on individual problem-solving patterns while periodically resurfacing previously learned material.',
+          title: 'Pattern-first practice planning',
+          body: 'The planner creates daily queues and longer-term schedules using solved history, focus areas, difficulty, and pattern proficiency. It can concentrate on one problem-solving pattern while periodically reinforcing concepts from earlier sessions.',
         },
         {
-          title: 'AI coaching boundary',
-          body: 'Yavria is integrated as an external AI coaching service. NextProblem supplies practice history and progress as context for personalized guidance while keeping the two applications independently deployable.',
+          title: 'Feedback and retention',
+          body: 'Self-assessments, session debriefs, and retention checks help distinguish a completed problem from a mastered pattern. Explanations for recommended problems make the intent of each practice session visible.',
+        },
+        {
+          title: 'Browser extension and progress',
+          body: 'A Chrome extension synchronizes completed LeetCode problems and keeps practice history current. Planning and progress tracking remain first-class application features, rather than being delegated to an LLM.',
+        },
+        {
+          title: 'AI integration and service boundaries',
+          body: 'NextProblem supplies relevant practice context to Yavria for personalized coaching while retaining ownership of its planning logic and user progress. The two applications remain independently deployable, with Docker and Kubernetes options for the platform.',
         },
       ],
     },

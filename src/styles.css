@@ -176,6 +176,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
   letter-spacing: -0.01em;
 }
 
+.education-list {
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+}
+
 .role,
 .education-row p {
   margin: 0.15rem 0 0;

@@ -226,10 +226,18 @@ function HomePage() {
 
       <section className="education section-compact" id="education">
         <h2>Education</h2>
-        <div className="education-row">
-          <div>
-            <h3>B.S. Computer Science</h3>
-            <p>Southern New Hampshire University</p>
+        <div className="education-list">
+          <div className="education-row">
+            <div>
+              <h3>B.S. Computer Science</h3>
+              <p>Southern New Hampshire University</p>
+            </div>
+          </div>
+          <div className="education-row">
+            <div>
+              <h3>A.S. Computer Science</h3>
+              <p>Sacramento City College</p>
+            </div>
           </div>
         </div>
       </section>

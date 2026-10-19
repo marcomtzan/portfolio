@@ -58,7 +58,7 @@ const projects = [
     subtitle: 'Repository-Aware AI & Developer Tools',
     icon: '/assets/yavria-icon.png',
     summary: 'A self-hosted AI workspace for exploring code and technical knowledge. Its retrieval pipeline combines hybrid ranking, persistent conversation context, and execution diagnostics, with a VS Code extension for repository-aware assistance.',
-    tech: ['C#', '.NET 10', 'PostgreSQL', 'pgvector', 'RAG', 'React', 'Docker', 'Kubernetes'],
+    tech: ['C#', '.NET 10', 'PostgreSQL', 'pgvector', 'RAG', 'React', 'Docker', 'Kubernetes', 'GitHub Actions'],
     images: [
       '/assets/yavria/yavria-1.png',
       '/assets/yavria/yavria-2.png',
@@ -68,20 +68,28 @@ const projects = [
       intro: 'I built Yavria to explore what makes AI assistance useful when answers depend on private repositories and accumulated context, not just a single prompt. It brings together knowledge ingestion, retrieval, model orchestration, and inspectable diagnostics behind a web app and VS Code extension.',
       sections: [
         {
-          title: 'Retrieval beyond vector similarity',
-          body: 'Content is indexed into PostgreSQL with pgvector and retrieved through a pipeline that considers semantic relevance, source authority, and query intent. Coverage planning and context compression help assemble the evidence sent to the model.',
+          title: 'Retrieval with context',
+          body: 'PostgreSQL and pgvector rank content by meaning, source authority, and query intent. Context compression keeps the evidence sent to the model focused.',
         },
         {
           title: 'Orchestration and diagnostics',
-          body: 'Knowledge retrieval, conversation context, model calls, and authentication have distinct service responsibilities. Persisted execution traces expose individual pipeline stages, making response quality and failures easier to investigate.',
+          body: 'Separate services handle retrieval, conversations, model calls, and authentication. Saved execution traces make each pipeline stage easier to inspect and troubleshoot.',
         },
         {
-          title: 'Developer workflow',
-          body: 'A VS Code extension brings repository-aware assistance directly into the editor. The web client supports authenticated conversations, persistent context, and streaming model responses.',
+          title: 'Observability',
+          body: 'OpenTelemetry routes logs to Loki, traces to Tempo, and metrics to Prometheus. Grafana links logs and traces to troubleshoot requests across services.',
         },
         {
-          title: 'Self-hosting and deployment',
-          body: 'Docker and Kubernetes configurations support a multi-service stack with PostgreSQL, S3-compatible object storage, and edge routing. Self-hosting gives the application control over its data, infrastructure, and integration boundaries.',
+          title: 'Full-stack CI',
+          body: 'GitHub Actions checks 12 .NET test projects, web apps, and client builds. Pull requests run affected checks; main-branch and scheduled runs validate the full stack.',
+        },
+        {
+          title: 'Immutable releases',
+          body: 'The pipeline scans and records 11 container images by digest. Runtime configuration lets staging and production use the same verified builds.',
+        },
+        {
+          title: 'Deployment and recovery',
+          body: 'Kubernetes workflows check migrations and readiness, with compatibility checks before rollback. Production activation remains gated on staging acceptance, backup evidence, and environment setup.',
         },
       ],
     },
@@ -92,7 +100,7 @@ const projects = [
     subtitle: 'Adaptive Coding Practice & AI Coach',
     icon: '/assets/nextproblem-icon.svg',
     summary: 'A coding interview practice platform that turns LeetCode history into focused daily plans. It tracks pattern mastery and retention, syncs progress through a Chrome extension, and integrates Yavria for context-aware coaching.',
-    tech: ['C#', '.NET 10', 'ASP.NET Core', 'React', 'TypeScript', 'Docker', 'Kubernetes'],
+    tech: ['C#', '.NET 10', 'ASP.NET Core', 'React', 'TypeScript', 'Docker', 'Kubernetes', 'GitHub Actions'],
     images: [
       '/assets/next-problem/next-problem-1.png',
       '/assets/next-problem/next-problem-2.png',
@@ -103,20 +111,28 @@ const projects = [
       intro: 'I built NextProblem around a question: how do you decide what to practice next when completing more problems does not necessarily mean making progress? It combines practice history, self-assessment, and targeted review into daily plans, with AI coaching available when needed.',
       sections: [
         {
-          title: 'Pattern-first practice planning',
-          body: 'The planner creates daily queues and longer-term schedules using solved history, focus areas, difficulty, and pattern proficiency. It can concentrate on one problem-solving pattern while periodically reinforcing concepts from earlier sessions.',
+          title: 'Focused practice plans',
+          body: 'Daily queues use practice history, difficulty, and pattern proficiency to choose the next problem. Regular reviews reinforce earlier concepts.',
         },
         {
           title: 'Feedback and retention',
-          body: 'Self-assessments, session debriefs, and retention checks help distinguish a completed problem from a mastered pattern. Explanations for recommended problems make the intent of each practice session visible.',
+          body: 'Self-assessments and retention checks track understanding beyond completed problems. Each recommendation explains what the practice session is meant to reinforce.',
         },
         {
-          title: 'Browser extension and progress',
-          body: 'A Chrome extension synchronizes completed LeetCode problems and keeps practice history current. Planning and progress tracking remain first-class application features, rather than being delegated to an LLM.',
+          title: 'Automatic progress tracking',
+          body: 'A Chrome extension syncs completed LeetCode problems into practice history. Planning and progress tracking stay in application logic.',
         },
         {
-          title: 'AI integration and service boundaries',
-          body: 'NextProblem supplies relevant practice context to Yavria for personalized coaching while retaining ownership of its planning logic and user progress. The two applications remain independently deployable, with Docker and Kubernetes options for the platform.',
+          title: 'AI coaching',
+          body: 'NextProblem sends relevant practice context to Yavria for personalized coaching. It keeps ownership of planning and progress, and the applications deploy independently.',
+        },
+        {
+          title: 'CI and deployment',
+          body: 'GitHub Actions validates API tests, web builds, and extension packages. Deployments use digest-pinned images and run database migrations before rolling out application updates.',
+        },
+        {
+          title: 'Chrome extension releases',
+          body: 'Release workflows verify the extension version, source commit, and store identity. Verified packages enter staged store review, with final publication handled manually.',
         },
       ],
     },

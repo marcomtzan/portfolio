@@ -389,11 +389,13 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
 .case-detail-list {
   display: flex;
+  flex-wrap: wrap;
   gap: 1.5rem;
   padding: 2rem 0 3rem;
 }
 .case-detail {
-  flex: 1 1 0;
+  flex: 1 1 calc(50% - 0.75rem);
+  min-width: 0;
   padding: 1.4rem;
   border: 0.0625rem solid var(--border);
   border-radius: 0.75rem;
@@ -408,6 +410,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .site-shell { width: min(100% - 2rem, 72rem); }
   .nav { gap: 1.2rem; }
   .project-list, .case-detail-list { flex-direction: column; }
+  .case-detail { flex-basis: auto; }
   .project-card { min-height: auto; }
   .about-body { flex-direction: column; gap: 1.75rem; }
   .contact-list { flex-basis: auto; width: 100%; padding: 1.25rem 0 0; border-left: 0; border-top: 0.0625rem solid var(--border); }

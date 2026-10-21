@@ -72,6 +72,10 @@ const projects = [
           body: 'PostgreSQL and pgvector rank content by meaning, source authority, and query intent. Context compression keeps the evidence sent to the model focused.',
         },
         {
+          title: 'Persistent knowledge',
+          body: 'Upload files and sync approved repositories into persistent knowledge. Source freshness checks help keep retrieved context aligned with changing code.',
+        },
+        {
           title: 'Orchestration and diagnostics',
           body: 'Separate services handle retrieval, conversations, model calls, and authentication. Saved execution traces make each pipeline stage easier to inspect and troubleshoot.',
         },
@@ -80,16 +84,12 @@ const projects = [
           body: 'OpenTelemetry routes logs to Loki, traces to Tempo, and metrics to Prometheus. Grafana links logs and traces to troubleshoot requests across services.',
         },
         {
-          title: 'Full-stack CI',
-          body: 'GitHub Actions checks 12 .NET test projects, web apps, and client builds. Pull requests run affected checks; main-branch and scheduled runs validate the full stack.',
-        },
-        {
-          title: 'Immutable releases',
-          body: 'The pipeline scans and records 11 container images by digest. Runtime configuration lets staging and production use the same verified builds.',
+          title: 'CI/CD automation',
+          body: 'GitHub Actions validates 12 .NET test projects, web apps, and clients before publishing releases. Successful builds feed staging and production deployment workflows.',
         },
         {
           title: 'Deployment and recovery',
-          body: 'Kubernetes workflows check migrations and readiness, with compatibility checks before rollback. Production activation remains gated on staging acceptance, backup evidence, and environment setup.',
+          body: 'Kubernetes workflows run migrations, verify rollouts, and support approved production promotion. Staging acceptance, recovery evidence, and compatibility checks guard deployment and rollback.',
         },
       ],
     },
@@ -97,42 +97,49 @@ const projects = [
   {
     slug: 'nextproblem',
     title: 'NextProblem',
-    subtitle: 'Adaptive Coding Practice & AI Coach',
+    subtitle: 'Interactive Learning, Coding Practice & AI Coaching',
     icon: '/assets/nextproblem-icon.svg',
-    summary: 'A coding interview practice platform that turns LeetCode history into focused daily plans. It tracks pattern mastery and retention, syncs progress through a Chrome extension, and integrates Yavria for context-aware coaching.',
-    tech: ['C#', '.NET 10', 'ASP.NET Core', 'React', 'TypeScript', 'Docker', 'Kubernetes', 'GitHub Actions'],
+    summary: 'An interactive learning and coding practice platform covering algorithms, system design, networking, and databases. Learners explore simulations, solve problems in Python or TypeScript, and get contextual AI guidance, with personalized plans and retention tracking.',
+    tech: ['C#', '.NET 10', 'React', 'TypeScript', 'Python', 'SQLite', 'Docker', 'Kubernetes', 'GitHub Actions'],
     images: [
-      '/assets/next-problem/next-problem-1.png',
-      '/assets/next-problem/next-problem-2.png',
-      '/assets/next-problem/next-problem-3.png',
+      '/assets/next-problem/problem-solving-workspace.jpg',
+      '/assets/next-problem/algorithm-walkthrough.jpg',
+      '/assets/next-problem/system-design-simulation.jpg',
+      '/assets/next-problem/postgresql-lab.jpg',
+    ],
+    imageAlts: [
+      'NextProblem problem-solving workspace with a Python sliding-window solution, problem statement, and accepted example test result',
+      'NextProblem algorithm walkthrough tracing a two-pointer solution with a visual model and highlighted Python code',
+      'NextProblem caching simulation showing requests moving between a client, application, cache, and database',
+      'NextProblem PostgreSQL lab showing an editable SQL query and its results in the browser',
     ],
     liveUrl: 'https://nextproblem.app',
     caseStudy: {
-      intro: 'I built NextProblem around a question: how do you decide what to practice next when completing more problems does not necessarily mean making progress? It combines practice history, self-assessment, and targeted review into daily plans, with AI coaching available when needed.',
+      intro: 'I built NextProblem to connect understanding a concept with applying it. Interactive lessons help learners explore how algorithms and systems behave, while an integrated coding workspace supports solving, testing, and reflection. Contextual AI coaching and personalized review help guide what comes next.',
       sections: [
         {
-          title: 'Focused practice plans',
-          body: 'Daily queues use practice history, difficulty, and pattern proficiency to choose the next problem. Regular reviews reinforce earlier concepts.',
+          title: 'Interactive learning',
+          body: 'Four learning collections cover algorithms, system design, networking, and databases. Learners trace algorithms, compare caching strategies under failures, follow network protocols, and run PostgreSQL queries in a browser sandbox. Simulations make design tradeoffs visible through teaching models, with illustrative timings rather than performance benchmarks.',
         },
         {
-          title: 'Feedback and retention',
-          body: 'Self-assessments and retention checks track understanding beyond completed problems. Each recommendation explains what the practice session is meant to reinforce.',
+          title: 'Practice in one workspace',
+          body: 'A versioned problem library connects to an integrated Python and TypeScript editor. Saved drafts, Run and Submit actions, judge verdicts, progressive hints, and a session timeline keep solving and reviewing in one workspace.',
         },
         {
-          title: 'Automatic progress tracking',
-          body: 'A Chrome extension syncs completed LeetCode problems into practice history. Planning and progress tracking stay in application logic.',
+          title: 'Guidance while solving',
+          body: 'Coach receives the current problem and editor contents so guidance can address the code being written. It is instructed to begin with small hints and guiding questions. Approved account linking connects NextProblem to Yavria, which provides the coaching backend.',
         },
         {
-          title: 'AI coaching',
-          body: 'NextProblem sends relevant practice context to Yavria for personalized coaching. It keeps ownership of planning and progress, and the applications deploy independently.',
+          title: 'Plans that respond to practice',
+          body: 'Native submissions, self-assessments, reflections, and retention evidence inform the learning loop. Personalized plans use practice history and pattern mastery to recommend what to work on next, while targeted reviews revisit earlier concepts.',
         },
         {
-          title: 'CI and deployment',
-          body: 'GitHub Actions validates API tests, web builds, and extension packages. Deployments use digest-pinned images and run database migrations before rolling out application updates.',
+          title: 'Trusted execution and progress',
+          body: 'A separate judge supervisor runs submitted programs in disposable containers with resource limits and workload networking disabled. A bounded job queue controls pending work, and trusted submission results establish verified completion for progress tracking.',
         },
         {
-          title: 'Chrome extension releases',
-          body: 'Release workflows verify the extension version, source commit, and store identity. Verified packages enter staged store review, with final publication handled manually.',
+          title: 'Delivery and reliability',
+          body: 'Shared automated checks, container releases, and Kubernetes deployment workflows coordinate the web app, API, problem catalog, and execution runtime. Release workflows cover migrations, staging qualification, and production promotion.',
         },
       ],
     },
@@ -327,7 +334,7 @@ function CaseStudyPage({ project }) {
         </button>
         <img
           src={project.images[imageIndex]}
-          alt={`${project.title} application screenshot ${imageIndex + 1} of ${imageCount}`}
+          alt={project.imageAlts?.[imageIndex] ?? `${project.title} application screenshot ${imageIndex + 1} of ${imageCount}`}
         />
         <button
           className="case-screenshot-arrow next"
@@ -341,6 +348,12 @@ function CaseStudyPage({ project }) {
           {imageIndex + 1} / {imageCount}
         </span>
       </section>
+
+      {project.imageAlts && (
+        <a className="text-link case-screenshot-full-size" href={project.images[imageIndex]} target="_blank" rel="noreferrer">
+          Open full-size screenshot ↗
+        </a>
+      )}
 
       <section className="case-detail-list">
         {project.caseStudy.sections.map((section) => (

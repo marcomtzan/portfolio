@@ -347,6 +347,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   overflow: hidden;
 }
 .case-screenshot-block img { display: block; width: 100%; max-height: 46rem; object-fit: contain; border-radius: 0.45rem; }
+.case-screenshot-full-size { display: inline-flex; margin-top: 0.85rem; }
 .case-screenshot-arrow {
   position: absolute;
   top: 50%;

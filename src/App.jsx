@@ -163,7 +163,7 @@ function Header() {
         <a href="/#experience">Experience</a>
         <a href="/#projects">Projects</a>
         <a href="/#about">About</a>
-        <a href="mailto:marcomtzan@gmail.com">Contact</a>
+        <a href="mailto:marco@marco-martinez.com">Contact</a>
       </nav>
     </header>
   )
@@ -275,11 +275,11 @@ function HomePage() {
             <p>
               Outside of work, I enjoy building personal projects, experimenting with AI and new technologies, and spending time with my family.
             </p>
-            <a className="text-link" href="mailto:marcomtzan@gmail.com">Get in touch <ArrowIcon /></a>
+            <a className="text-link" href="mailto:marco@marco-martinez.com">Get in touch <ArrowIcon /></a>
           </div>
           <address className="contact-list">
             <span><strong>⌖</strong> Raleigh, NC</span>
-            <a href="mailto:marcomtzan@gmail.com"><strong>✉</strong> marcomtzan@gmail.com</a>
+            <a href="mailto:marco@marco-martinez.com"><strong>✉</strong> marco@marco-martinez.com</a>
             <a href="https://linkedin.com/in/marcomtzan" target="_blank" rel="noreferrer"><strong>in</strong> linkedin.com/in/marcomtzan</a>
             <a href="https://github.com/marcomtzan" target="_blank" rel="noreferrer"><strong>◉</strong> github.com/marcomtzan</a>
           </address>

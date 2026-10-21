@@ -7,7 +7,7 @@ const experience = [
     role: 'Senior Software Engineer',
     dates: 'Mar 2025 – Present',
     bullets: [
-      'Built centralized observability infrastructure on Kubernetes using OpenTelemetry, Loki, Tempo, and Prometheus, with a reusable .NET logging library to standardize telemetry across applications.',
+      'Designed and implemented Kubernetes-based observability infrastructure using OpenTelemetry, Loki, Tempo, Prometheus, and Grafana, with a reusable .NET logging library to standardize application telemetry.',
       'Delivered a full-stack third-party application integration using C#, .NET, and TypeScript, including deployment scripts and backups, to support a major customer sales opportunity.',
       'Built and integrated a shared dialog UI library using TypeScript, JavaScript, HTML, and CSS across multiple web applications and a C++ desktop client, standardizing dialog behavior across teams.',
       'Redesigned chat creation in a SignalR-based application to identify conversations by title and participants, preventing duplicate chats and enabling reuse of existing conversations.',
@@ -22,7 +22,7 @@ const experience = [
     dates: 'May 2023 – Mar 2025',
     bullets: [
       'Migrated backend functionality from legacy Java services to C#/.NET, modernizing application components while preserving existing behavior.',
-      'Designed and built a .NET authentication flow, allowing JWT-authenticated users to create and use API keys for Power BI access to on-premises reporting data.',
+      'Architected and implemented API-key authentication for Power BI integration using C#/.NET, extending existing JWT-based authorization to support secure access to enterprise reporting data.',
       'Led offshore engineers implementing OData endpoints, assigning work around repeatable application patterns and establishing implementation conventions.',
       'Diagnosed and resolved production issues in Azure using Application Insights to identify root causes, implementing and deploying fixes through CI/CD pipelines.',
     ],

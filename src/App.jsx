@@ -108,7 +108,7 @@ const projects = [
       '/assets/next-problem/postgresql-lab.jpg',
     ],
     imageAlts: [
-      'NextProblem problem-solving workspace with a Python sliding-window solution, problem statement, and accepted example test result',
+      'NextProblem problem-solving workspace with a Python sliding-window solution, problem statement, and Run and Submit controls',
       'NextProblem algorithm walkthrough tracing a two-pointer solution with a visual model and highlighted Python code',
       'NextProblem caching simulation showing requests moving between a client, application, cache, and database',
       'NextProblem PostgreSQL lab showing an editable SQL query and its results in the browser',

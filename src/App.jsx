@@ -102,16 +102,20 @@ const projects = [
     summary: 'An interactive learning and coding practice platform covering algorithms, system design, networking, and databases. Learners explore simulations, solve problems in Python or TypeScript, and get contextual AI guidance, with personalized plans and retention tracking.',
     tech: ['C#', '.NET 10', 'React', 'TypeScript', 'Python', 'SQLite', 'Docker', 'Kubernetes', 'GitHub Actions'],
     images: [
-      '/assets/next-problem/problem-solving-workspace.jpg',
-      '/assets/next-problem/algorithm-walkthrough.jpg',
-      '/assets/next-problem/system-design-simulation.jpg',
-      '/assets/next-problem/postgresql-lab.jpg',
+      '/assets/next-problem/next-problem-2.png',
+      '/assets/next-problem/next-problem-3.png',
+      '/assets/next-problem/next-problem-4.png',
+      '/assets/next-problem/next-problem-5.png',
+      '/assets/next-problem/next-problem-6.png',
+      '/assets/next-problem/next-problem-1.png',
     ],
     imageAlts: [
-      'NextProblem problem-solving workspace with a Python sliding-window solution, problem statement, and Run and Submit controls',
-      'NextProblem algorithm walkthrough tracing a two-pointer solution with a visual model and highlighted Python code',
+      'NextProblem homepage introducing interactive lessons and learning collections',
+      'NextProblem algorithms collection with labs for hash maps, prefix sums, sorting, intervals, greedy algorithms, and heaps',
+      'NextProblem hash map walkthrough showing a two-sum visual model and highlighted Python code',
       'NextProblem caching simulation showing requests moving between a client, application, cache, and database',
       'NextProblem PostgreSQL lab showing an editable SQL query and its results in the browser',
+      'NextProblem concurrency simulation showing two workers incrementing a shared counter with teaching pseudocode and execution controls',
     ],
     liveUrl: 'https://nextproblem.app',
     caseStudy: {
@@ -311,7 +315,6 @@ function CaseStudyPage({ project }) {
         <Link className="text-link" to="/#projects">← Back to projects</Link>
       </div>
       <section className="case-hero">
-        <p className="eyebrow">Case Study</p>
         <div className="case-title-row">
           <div className={`project-mark large ${project.slug}`}><img src={project.icon} alt="" aria-hidden="true" /></div>
           <div>

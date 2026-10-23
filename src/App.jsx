@@ -1,5 +1,11 @@
 import { Link, Route, Routes, useLocation } from 'react-router-dom'
 import { useEffect, useState } from 'react'
+import nextProblemConcurrency from './assets/next-problem/next-problem-1.png'
+import nextProblemHome from './assets/next-problem/next-problem-2.png'
+import nextProblemAlgorithms from './assets/next-problem/next-problem-3.png'
+import nextProblemHashMaps from './assets/next-problem/next-problem-4.png'
+import nextProblemCaching from './assets/next-problem/next-problem-5.png'
+import nextProblemPostgres from './assets/next-problem/next-problem-6.png'
 
 const experience = [
   {
@@ -102,12 +108,12 @@ const projects = [
     summary: 'An interactive learning and coding practice platform covering algorithms, system design, networking, and databases. Learners explore simulations, solve problems in Python or TypeScript, and get contextual AI guidance, with personalized plans and retention tracking.',
     tech: ['C#', '.NET 10', 'React', 'TypeScript', 'Python', 'SQLite', 'Docker', 'Kubernetes', 'GitHub Actions'],
     images: [
-      '/assets/next-problem/next-problem-2.png',
-      '/assets/next-problem/next-problem-3.png',
-      '/assets/next-problem/next-problem-4.png',
-      '/assets/next-problem/next-problem-5.png',
-      '/assets/next-problem/next-problem-6.png',
-      '/assets/next-problem/next-problem-1.png',
+      nextProblemHome,
+      nextProblemAlgorithms,
+      nextProblemHashMaps,
+      nextProblemCaching,
+      nextProblemPostgres,
+      nextProblemConcurrency,
     ],
     imageAlts: [
       'NextProblem homepage introducing interactive lessons and learning collections',

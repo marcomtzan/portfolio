@@ -225,8 +225,8 @@ function HomePage() {
       <section className="hero" id="home">
         <h1>Tools, Platforms, Products</h1>
         <p className="hero-copy">
-          I'm a senior software engineer building and maintaining enterprise applications with C#/.NET, Java, and TypeScript.
-          My experience spans full-stack development, cloud infrastructure, backend modernization, and production troubleshooting.
+          I'm a Senior Software Engineer with experience building and maintaining enterprise applications using TypeScript, C#/.NET, and SQL. 
+          I've built my career around software modernization, authentication, and developing reliable, extensible systems.
         </p>
       </section>
 
@@ -274,10 +274,10 @@ function HomePage() {
         <div className="about-body">
           <div className="about-copy">
             <p>
-              I enjoy solving complex technical problems, evaluating different approaches, and building reliable software. My work spans full-stack development, cloud infrastructure, backend modernization, and production troubleshooting.
+              More recently, my career has taken a research-oriented direction, with an emphasis on infrastructure, distributed systems, and software architecture.
             </p>
             <p>
-              Outside of work, I enjoy building personal projects, experimenting with AI and new technologies, and spending time with my family.
+              I've incorporated AI-assisted development into my research workflow, using rapid prototyping, proof-of-concept implementations, and data analysis to evaluate technologies and architectural approaches. This has significantly accelerated my ability to explore solutions, validate ideas, and make informed technical recommendations.
             </p>
             <a className="text-link" href="mailto:marco@marco-martinez.com">Get in touch <ArrowIcon /></a>
           </div>
